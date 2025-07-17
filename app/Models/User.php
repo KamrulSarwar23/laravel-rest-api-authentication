@@ -64,9 +64,14 @@ class User extends Authenticatable
         return $this->role === 'customer';
     }
 
-
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new CustomResetPasswordNotification($token));
+    }
+
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
     }
 }

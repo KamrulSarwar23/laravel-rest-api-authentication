@@ -78,7 +78,6 @@ class AuthController extends Controller
                 'status' => 200,
                 'token' => $token,
                 'user' => $user,
-
             ]);
         } else {
             return response()->json([
